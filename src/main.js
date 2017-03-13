@@ -5,6 +5,7 @@ import store from './store'
 
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
+import UsersApi from './api/users.js'
 
 Vue.use(VueMaterial)
 
@@ -15,7 +16,7 @@ Axios.defaults.headers.common.Accept = 'application/json'
 Axios.defaults.withCredentials = true
 
 Vue.config.productionTip = false
-
+UsersApi.checkLoggedIn()
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
