@@ -12,14 +12,17 @@
           <h3 class="md-title">Sidenav content</h3>
         </div>
       </md-toolbar>
-      <router-link :to="{ name: 'Posts.index' }">
-        <md-button class="md-raised md-primary" >Posts</md-button>
-      </router-link>
-      <router-link :to="{ name: 'Posts.new' }">
-        <md-button class="md-raised md-primary" >New Posts</md-button>
-      </router-link>
-      <md-button class="md-raised md-primary" @click.native="logout">Logout</md-button>
+      <md-list>
+        <router-link :to="{ name: 'Posts.index' }">
+          <md-list-item class="md-raised md-primary" >Posts</md-list-item>
+        </router-link>
+        <router-link :to="{ name: 'Posts.new' }">
+          <md-list-item class="md-raised md-primary" >New Posts</md-list-item>
+        </router-link>
+        <md-list-item class="md-raised md-primary" @click.native="logout">Logout</md-list-item>
+      </md-list>
     </md-sidenav>
+
   </div>
 </template>
 
