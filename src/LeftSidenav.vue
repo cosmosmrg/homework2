@@ -28,7 +28,6 @@
 
 <script>
 import UsersApi from './api/users.js'
-import router from './router'
 
 export default {
   methods: {
@@ -36,11 +35,7 @@ export default {
       this.$refs.leftSidenav.toggle()
     },
     logout () {
-      console.log('methods.logout')
-      UsersApi.logout(function (_response) {
-        // NOTE: Posts.index is not yet implemented
-        router.push({ name: 'Users.sign_in' })
-      })
+      UsersApi.logout()
     }
   }
 }
