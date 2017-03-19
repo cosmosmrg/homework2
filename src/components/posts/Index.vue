@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    <md-list class="custom-list md-triple-line" v-for="post in posts">
+    <md-list class="custom-list md-triple-line" v-for="post,key in posts" :key="post.id">
       <router-link :to="{ name: 'Posts.show', params: {id: post.id } }">
         <iccs340-post :post='post'></iccs340-post>
       </router-link>
