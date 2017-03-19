@@ -1,23 +1,10 @@
 <template>
   <div class="new-post">
-    <md-list>
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>folder</md-icon>
-        </md-avatar>
-        <div class="md-list-text-container">
-          <md-input-container>
-            <label>Add Comment</label>
-            <md-input v-model="comment.content" placeholder=""></md-input>
-          </md-input-container>
-        </div>
-      </md-list-item>
-      <md-list-item>
-        <span style="flex: 1"></span>
-        <md-button class="md-raised md-primary" @click.native="createComment">Save</md-button>
-        <span style="flex: 1"></span>
-      </md-list-item>
-    </md-list>
+    <el-card class="box-card">
+      <span>Adding a new comment</span>
+      <el-input  type="textarea" v-model="comment.content" placeholder=""></el-input>
+      <el-button style="margin-left:40%;margin-top:2%"type="primary" @click.native="createComment">Save</el-button>
+    </el-card>
   </div>
 </template>
 
@@ -48,7 +35,7 @@ export default {
       this.comment.content = ''
       CommentsApi.createComment(postId, content,
         function (_comment) {
-          console.log(_comment)
+          // console.log(_comment)
           router.push({ name: 'Posts.show', params: { post_id: postId }, query: { t: new Date() } })
         }
       )
@@ -58,7 +45,9 @@ export default {
 </script>
 
 <style scoped>
-.md-list-item {
-  padding-left: 40px;
+.box-card {
+  width: 480px;
+  margin-left: 10%;
+  margin-top: 0.5%;
 }
 </style>

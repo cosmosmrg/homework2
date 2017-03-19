@@ -1,14 +1,9 @@
 <template>
   <div class="comment">
-    <md-list-item>
-      <md-avatar>
-        <md-icon>account_circle</md-icon>
-      </md-avatar>
-      <div class="md-list-text-container">
-        <span>{{ comment.user.email }}</span>
-        <span>{{ comment.content }}</span>
-      </div>
-    </md-list-item>
+    <el-card class="box-card">
+      {{ comment.user.email }} : {{ comment.content }}
+    </el-card>
+
   </div>
 </template>
 
@@ -27,7 +22,9 @@ export default {
 </script>
 
 <style scoped>
-  .md-list-item {
-    padding-left: 40px;
+  .box-card {
+    width: 480px;
+    margin-left: 10%;
+    margin-top: 0.5%;
   }
 </style>
