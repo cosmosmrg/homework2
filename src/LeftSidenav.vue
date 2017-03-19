@@ -1,28 +1,17 @@
 <template lang="html">
   <div class="left-sidenav">
-    <md-toolbar>
-      <md-button class="md-icon-button" @click.native="toggleLeftSidenav">
-        <md-icon>menu</md-icon>
-      </md-button>
-      <h2 class="md-title">Homework 2</h2>
-    </md-toolbar>
-    <md-sidenav class="md-left" ref="leftSidenav">
-      <md-toolbar class="md-large">
-        <div class="md-toolbar-container">
-          <h3 class="md-title">Sidenav content</h3>
-        </div>
-      </md-toolbar>
-      <md-list>
+    <el-menu theme="dark" class="el-menu-demo" mode="horizontal">
+      <el-submenu index="2">
+        <template slot="title"><i class="el-icon-menu"></i>Homework 2</template>
         <router-link :to="{ name: 'Posts.index' }">
-          <md-list-item class="md-raised md-primary" >Posts</md-list-item>
+          <el-menu-item index="2-1" router>Posts</el-menu-item>
         </router-link>
         <router-link :to="{ name: 'Posts.new' }">
-          <md-list-item class="md-raised md-primary" >New Posts</md-list-item>
+          <el-menu-item index="2-2">New Posts</el-menu-item>
         </router-link>
-        <md-list-item class="md-raised md-primary" @click.native="logout">Logout</md-list-item>
-      </md-list>
-    </md-sidenav>
-
+        <el-menu-item index="2-3" @click.native="logout">Logout</el-menu-item>
+      </el-submenu>
+    </el-menu>
   </div>
 </template>
 

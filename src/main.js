@@ -2,12 +2,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+// import VueMaterial from 'vue-material'
+// import 'vue-material/dist/vue-material.css'
 import UsersApi from './api/users.js'
 
-Vue.use(VueMaterial)
+Vue.use(ElementUI)
 
 import Axios from 'axios'
 Vue.$http = Axios

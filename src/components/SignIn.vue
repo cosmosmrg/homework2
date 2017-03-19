@@ -1,35 +1,16 @@
 <template>
   <div class="sign-in">
-    <md-list class="md-double-line">
-      <md-subheader class="md-inset">New Post</md-subheader>
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>folder</md-icon>
-        </md-avatar>
-        <div class="md-list-text-container">
-          <md-input-container>
-            <label>Email</label>
-            <md-input v-model="email" placeholder=""></md-input>
-          </md-input-container>
-        </div>
-      </md-list-item>
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>folder</md-icon>
-        </md-avatar>
-        <div class="md-list-text-container">
-          <md-input-container>
-            <label>Password</label>
-            <md-input v-model="password" placeholder="" type="password" @keyup.enter.native="login"></md-input>
-          </md-input-container>
-        </div>
-      </md-list-item>
-      <md-list-item>
-        <span style="flex: 1"></span>
-        <md-button class="md-raised md-primary" @click.native="login">Login</md-button>
-        <span style="flex: 1"></span>
-      </md-list-item>
-    </md-list>
+    <el-card class="box-card">
+      <el-form label-width="120px">
+        <el-form-item label="Email">
+          <el-input v-model="email" placeholder=""></el-input>
+        </el-form-item>
+        <el-form-item label="Password">
+          <el-input v-model="password" placeholder="" type="password" @keyup.enter.native="login"></el-input>
+        </el-form-item>
+        <el-button style="margin-left:40%"type="primary" @click.native="login">Login</el-button>
+      </el-form>
+    </el-card>
   </div>
 </template>
 
@@ -57,5 +38,27 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    padding: 18px 0;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  .clearfix:after {
+      clear: both
+  }
+
+  .box-card {
+    width: 480px;
+    margin-left: 27%;
+    margin-top: 10%;
+  }
 </style>

@@ -1,10 +1,18 @@
 <template>
   <div class="posts">
-    <md-list class="custom-list md-triple-line" v-for="post,key in posts" :key="post.id">
+    <!-- <el-card class="box-card"> -->
+
+      <div v-for="post in posts" :key="post.id" class="text item">
+        <router-link :to="{ name: 'Posts.show', params: {id: post.id } }">
+          <iccs340-post :post='post'></iccs340-post>
+        </router-link>
+      </div>
+    <!-- </el-card> -->
+    <!-- <md-list class="custom-list md-triple-line" v-for="post,key in posts" :key="post.id">
       <router-link :to="{ name: 'Posts.show', params: {id: post.id } }">
         <iccs340-post :post='post'></iccs340-post>
       </router-link>
-    </md-list>
+    </md-list> -->
   </div>
 </template>
 
@@ -42,5 +50,10 @@ export default {
 <style scoped>
   .posts {
     padding: 0 10px;
+  }
+  .box-card {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 5%;
   }
 </style>
